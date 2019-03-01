@@ -70,7 +70,7 @@ def get_all_autos(urls):
 
 def check(filename):
     if not os.path.exists(filename):
-        with open('urls.xml', 'w') as file:
+        with open(filename, 'w') as file:
             print("created file ", file)
 
 def main():
