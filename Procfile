@@ -1,1 +1,1 @@
-web: python kolesa_parse.py
+bot: python kolesa_parse.py
