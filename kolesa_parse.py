@@ -73,14 +73,17 @@ def check(filename):
         with open(filename, 'w') as file:
             print("created file ", file)
 
+
 def main():
     try:
         check('urls.xml')
         check('passed_autos.xml')
+        tt = time.time()
         with open('urls.xml', 'r') as file:
             urls = file.read().split('\n')
         with open('passed_autos.xml', 'r') as file:
             passed_autos = file.read().split('\n')
+        print(time.time()-tt, "Time spent reading the file")
         while (1):
             t = time.time()
             all_autos = get_all_autos(urls)
@@ -104,7 +107,7 @@ def main():
                     greet_bot.send_message(greetings[0], ids_dict[div['id']])
                     greet_bot.send_message(greetings[1], ids_dict[div['id']])
 
-            print(time.time()-t, 'sec')
+            print(time.time()-t, 'sec', "One iteration time")
     except Exception as e:
         print(e)
 
