@@ -107,15 +107,15 @@ def main():
                     passed_autos.append(div['id'])
                     href = urljoin('https://krisha.kz', div.a['href'])
                     # last_region = div['a-info-side col-right-list']
-                    price = div.contents[1].contents[3].contents[1].contents[1].contents[3].text.lstrip()
-                    name = div.contents[1].contents[3].contents[1].contents[1].contents[1].contents[1].text.lstrip()
-                    address = div.contents[1].contents[3].contents[1].contents[3].contents[1].text.strip()
-                    info = div.contents[1].contents[3].contents[1].contents[3].contents[3].text.strip()
-                    date = div.contents[1].contents[3].contents[3].contents[3].contents[1].contents[3].text.strip()
-                    ids_dict.update({div['id']: [str(href), '  ' + str(price), str(name), str(address), str(info),
-                                                 str(date)]})
+                    # price = div.contents[1].contents[3].contents[1].contents[1].contents[3].text.lstrip()
+                    # name = div.contents[1].contents[3].contents[1].contents[1].contents[1].contents[1].text.lstrip()
+                    # address = div.contents[1].contents[3].contents[1].contents[3].contents[1].text.strip()
+                    # info = div.contents[1].contents[3].contents[1].contents[3].contents[3].text.strip()
+                    # date = div.contents[1].contents[3].contents[3].contents[3].contents[1].contents[3].text.strip()
+                    # ids_dict.update({div['id']: [str(href), '  ' + str(price), str(name), str(address), str(info),
+                    #                              str(date)]})
                     # vkapi.messages.send(domain='id204817379', message=ids_dict[div['id']], v=3)
-                    greet_bot.send_message(greetings[0], ids_dict[div['id']])
+                    greet_bot.send_message(greetings[0], href)
                     # greet_bot.send_message(greetings[1], ids_dict[div['id']])
 
             print(time.time() - t, 'sec', "One iteration time")
