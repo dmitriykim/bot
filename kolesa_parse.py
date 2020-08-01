@@ -56,14 +56,17 @@ def get_html(url):
 
 
 def get_all_autos(urls):
-    div_names = ['a-card a-storage-live ddl_product ddl_product_link not-colored is-visible',
-                 'a-card a-storage-live ddl_product ddl_product_link not-colored is-visible is-urgent',
-                 'a-card a-storage-live ddl_product ddl_product_link is-colored paid-color-light-red is-visible',
-                 'a-card a-storage-live ddl_product ddl_product_link is-colored paid-color-light-red is-visible is-urgent',
-                 'a-card a-storage-live ddl_product ddl_product_link is-colored paid-color-light-yellow is-visible',
-                 'a-card a-storage-live ddl_product ddl_product_link is-colored paid-color-light-yellow is-visible is-urgent',
-                 'a-card a-storage-live ddl_product ddl_product_link is-colored paid-color-light-green is-visible',
-                 'a-card a-storage-live ddl_product ddl_product_link is-colored paid-color-light-green is-visible is-urgent']
+    # div_names = ['a-card a-storage-live ddl_product ddl_product_link not-colored is-visible',
+    #              'a-card a-storage-live ddl_product ddl_product_link not-colored is-visible is-urgent',
+    #              'a-card a-storage-live ddl_product ddl_product_link is-colored paid-color-light-red is-visible',
+    #              'a-card a-storage-live ddl_product ddl_product_link is-colored paid-color-light-red is-visible is-urgent',
+    #              'a-card a-storage-live ddl_product ddl_product_link is-colored paid-color-light-yellow is-visible',
+    #              'a-card a-storage-live ddl_product ddl_product_link is-colored paid-color-light-yellow is-visible is-urgent',
+    #              'a-card a-storage-live ddl_product ddl_product_link is-colored paid-color-light-green is-visible',
+    #              'a-card a-storage-live ddl_product ddl_product_link is-colored paid-color-light-green is-visible is-urgent']
+    div_names = ['row vw-item list-item a-elem',
+                 'row vw-item list-item yellow a-elem',
+                 'row vw-item list-item blue a-elem']
     all_divs = []
     for url in urls:
         if url == '':
@@ -105,7 +108,8 @@ def main():
                     with open('passed_flats.xml', 'a') as file:
                         file.write(div['id'] + '\n')
                     passed_autos.append(div['id'])
-                    href = urljoin('https://krisha.kz', div.a['href'])
+                    # href = urljoin('https://krisha.kz', div.a['href'])
+                    href = urljoin('https://kolesa.kz', div.a['href'])
                     # last_region = div['a-info-side col-right-list']
                     # price = div.contents[1].contents[3].contents[1].contents[1].contents[3].text.lstrip()
                     # name = div.contents[1].contents[3].contents[1].contents[1].contents[1].contents[1].text.lstrip()
