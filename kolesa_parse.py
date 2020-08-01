@@ -87,10 +87,12 @@ def check(filename):
 
 def main():
     try:
-        check('urls.xml')
+        # check('urls.xml')
+        check('urls_kolesa.xml')
         check('passed_flats.xml')
         tt = time.time()
-        with open('urls.xml', 'r') as file:
+        # with open('urls.xml', 'r') as file:
+        with open('urls_kolesa.xml', 'r') as file:
             urls = file.read().split('\n')
         with open('passed_flats.xml', 'r') as file:
             passed_autos = file.read().split('\n')
